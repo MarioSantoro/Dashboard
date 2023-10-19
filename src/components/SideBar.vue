@@ -19,16 +19,17 @@
             <div class="wrapper">
             </div>
             <div class="option">
-                <div class="accordion accordion-flush" id="accordionFlushExample" v-for="option, index in listItem">
+                <div class="accordion accordion-flush" id="accordionFlushExample" v-for="option in  listItem ">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-                                :data-bs-target="'#' + option" aria-expanded="false" :aria-controls="option">
-                                <i class="fa-solid fa-house me-3"></i> Home
+                                :data-bs-target="'#' + option.number" aria-expanded="false" :aria-controls="option.number">
+                                <i :class="option.icon"></i> {{ option.text }}
                             </button>
                         </h2>
-                        <div :id="option" class="accordion-collapse collapse" data-bs-parent="#accordionFlushExample">
-                            <ul class="accordion-body">
+                        <div :id="option.number" class="accordion-collapse collapse"
+                            data-bs-parent="#accordionFlushExample">
+                            <ul class="accordion-body list-unstyled">
                                 <li>Dashboard 1</li>
                                 <li>Dashboard 2</li>
                                 <li>Dashboard 3</li>
@@ -45,10 +46,26 @@ export default {
     data() {
         return {
             listItem: [
-                'flush-collapseOne',
-                'flush-collapseTwo',
-                'flush-collapseThree',
-                'flush-collapseFour',
+                {
+                    number: 'flush-collapseOne',
+                    icon: 'fa-solid fa-house me-3',
+                    text: 'Home'
+                },
+                {
+                    number: 'flush-collapseTwo',
+                    icon: 'fa-solid fa-map-location-dot me-3',
+                    text: 'Maps'
+                },
+                {
+                    number: 'flush-collapseThree',
+                    icon: 'fa-solid fa-gear me-3',
+                    text: 'Config'
+                },
+                {
+                    number: 'flush-collapseFour',
+                    icon: 'fa-solid fa-envelope me-3',
+                    text: 'Contacts'
+                },
             ]
         }
     }
