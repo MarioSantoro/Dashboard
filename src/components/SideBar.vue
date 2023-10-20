@@ -79,21 +79,7 @@ nav {
     padding: .66rem .44rem;
     color: white;
 
-    div.profile {
-        div.image-profile {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 3px solid white;
-
-            img {
-                height: 100%;
-                width: 100%;
-                object-fit: cover;
-            }
-        }
-    }
+    div.profile {}
 
     div.menu {
         div.wrapper {
